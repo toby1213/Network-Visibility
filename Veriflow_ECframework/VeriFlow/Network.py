@@ -1,10 +1,10 @@
-from VeriFlow.ForwardingGraph import ForwardingGraph
-from VeriFlow.Interval import Interval
-from VeriFlow.Trie import Trie
-from VeriFlow.Switch import Switch
-from VeriFlow.Host import Host
-from VeriFlow.Rule import Rule
-from VeriFlow.TrieNode import TrieNode
+from .ForwardingGraph import ForwardingGraph
+from .Interval import Interval
+from .Trie import Trie
+from .Switch import Switch
+from .Host import Host
+from .Rule import Rule
+from .TrieNode import TrieNode
 
 
 class Network(object):
@@ -88,7 +88,10 @@ class Network(object):
 	def checkWellformedness(self, ecs = None):
 		if(ecs is None):
 			ecs = self.getECsFromTrie()
+		print(1)
 		self.getNetworkErrors().clear();
+		print(1)
+		print(self.ecs)
 		for ec in self.ecs:
 			for host in hosts.values():
 				connectedSwitchId = host.getSwitchId();
@@ -97,6 +100,9 @@ class Network(object):
 				forwardingGraph.addToGraph(connectedSwitchId);
 				while (True):
 					associatedRule = currentSwitch.getAssociatedRule(ec.getLeft());
+					print(associatedRule)
+					print(ec.getLeft())
+					print(1)
 					if (associatedRule == None) :
 						# networkError = NetworkError();
 						# networkError.setErrorType(ErrorType.BLACK_HOLE);

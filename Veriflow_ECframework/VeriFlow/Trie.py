@@ -1,5 +1,5 @@
-from VeriFlow.TrieNode import TrieNode
-from VeriFlow.Interval import Interval
+from .TrieNode import TrieNode
+from .Interval import Interval
 
 class Trie(object):
 	"""docstring for Trie"""

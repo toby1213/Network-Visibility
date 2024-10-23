@@ -49,4 +49,4 @@ class Rule(object):
 		self.nextHopId = nextHopId
 
 	def matches(self, rulePrefix):
-		return rulePrefix.startsWith(prefix)
+		return self.prefix.startswith(rulePrefix)
